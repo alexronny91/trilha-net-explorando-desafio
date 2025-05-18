@@ -18,8 +18,8 @@ Suite suite = new Suite(tipoSuite: "Premium", capacidade: 2, valorDiaria: 30);
 // Cria uma nova reserva, passando a suíte e os hóspedes
 Reserva reserva = new Reserva(diasReservados: 5);
 reserva.CadastrarSuite(suite);
-reserva.CadastrarHospedes(hospedes);
+reserva.CadastrarHospedes(hospedes, suite);
 
 // Exibe a quantidade de hóspedes e o valor da diária
-Console.WriteLine($"Hóspedes: {reserva.ObterQuantidadeHospedes()}");
-Console.WriteLine($"Valor diária: {reserva.CalcularValorDiaria()}");
+Console.WriteLine($"Hóspedes: {reserva.ObterQuantidadeHospedes(hospedes)}");
+Console.WriteLine($"Valor diária: {reserva.CalcularValorDiaria(suite)}");
